@@ -32,5 +32,25 @@ return {
     [2] = i(2, "data_source"),
     [3] = i(3, "sql_table"),
     [4] = i(4, "sql_alias")
+  })),
+  s({trig="view", name="cubejs-yml-view"}, fmt([[
+  views:
+    - name: {1}
+      cubes:
+        - join_path: {2}
+          includes:
+            - {3}
+  ]], {
+    [1] = i(1, "view"),
+    [2] = i(2, "first cube"),
+    [3] = i(3, "first column")
+  })),
+  s({trig="join_path", name="cubejs-yml-view join-path"}, fmt([[
+  - join_path: {1}
+    includes:
+      - {2}
+  ]], {
+    [1] = i(1, "cubes"),
+    [2] = i(2, "first column")
   }))
 }
