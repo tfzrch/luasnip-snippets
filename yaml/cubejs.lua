@@ -71,6 +71,20 @@ return {
     [1] = i(1, "when sql"),
     [2] = i(2, "when label")
   })),
+  -- SubQuery Column
+  s({trig="subq", name="CubeJS YML sub-query dimension"}, fmt([[
+  - name: {1}
+    title: {2}
+    sql: "{{{3}.{4}}}"
+    type: {5}
+    sub_query: true
+  ]], {
+    [1] = i(1, "dimension"),
+    [2] = i(2, "title"),
+    [3] = i(3, "cube"),
+    [4] = i(4, "measure"),
+    [5] = i(5, "type")
+  })),
   -- View
   s({trig="view", name="cubejs-yml-view"}, fmt([[
   views:
