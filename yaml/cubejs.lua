@@ -56,6 +56,21 @@ return {
     [5] = i(5, "else label sql"),
     [6] = i(6, "type")
   })),
+  s({trig="when-sql", name="CubeJS YML when with sql label"}, fmt([[
+  - sql: "{1}"
+    label:
+      sql: "{2}"
+  ]],{
+    [1] = i(1, "when sql"),
+    [2] = i(2, "when label sql")
+  })),
+  s({trig="when-txt", name="CubeJS YML when with text label"}, fmt([[
+  - sql: "{1}"
+    label: "{2}"
+  ]],{
+    [1] = i(1, "when sql"),
+    [2] = i(2, "when label")
+  })),
   -- View
   s({trig="view", name="cubejs-yml-view"}, fmt([[
   views:
