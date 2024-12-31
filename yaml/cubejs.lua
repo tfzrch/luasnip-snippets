@@ -85,6 +85,25 @@ return {
     [4] = i(4, "measure"),
     [5] = i(5, "type")
   })),
+  -- Join
+  s({trig="join", name="CubeJS YML join"}, fmt([[
+  - name: {1}
+    relationship: {2}
+    sql: "{{CUBE.{3} = {4}.{5}}}"
+  ]], {
+    [1] = i(1, "cube"),
+    [2] = c(2, {
+      t({"one_to_one"}),
+      t({"one_to_many"}),
+      t({"many_to_one"})
+    }),
+    [3] = i(3, "local key"),
+    [4] = d(4, function(args)
+        return sn(nil, {i(1, args[1])})
+      end, {1}
+    ),
+    [5] = i(5, "foreign key")
+  })),
   -- View
   s({trig="view", name="cubejs-yml-view"}, fmt([[
   views:
