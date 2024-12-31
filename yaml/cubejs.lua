@@ -35,6 +35,27 @@ return {
     [3] = i(3, "sql"),
     [4] = i(4, "type")
   })),
+  -- Cube Case Column
+  s({trig="case", name="cubejs-yml-case-column"}, fmt([[
+  - name: {1}
+    title: {2}
+    case:
+      when:
+       - sql: "{3}"
+         label:
+          sql: "{4}"
+      else:
+        label:
+          sql: "{5}"
+    type: "{6}"
+  ]], {
+    [1] = i(1, "column_name"),
+    [2] = i(2, "title"),
+    [3] = i(3, "when sql"),
+    [4] = i(4, "when label sql"),
+    [5] = i(5, "else label sql"),
+    [6] = i(6, "type")
+  })),
   -- View
   s({trig="view", name="cubejs-yml-view"}, fmt([[
   views:
