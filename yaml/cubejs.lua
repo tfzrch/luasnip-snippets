@@ -52,5 +52,12 @@ return {
   ]], {
     [1] = i(1, "cubes"),
     [2] = i(2, "first column")
+  })),
+  s({trig="alias", name = "cubejs-yml-view-aliased-column"}, fmt([[
+  - name: {1}
+    alias: {2}
+  ]], {
+    [1] = i(1, "column"),
+    [2] = i(2, "alias")
   }))
 }
