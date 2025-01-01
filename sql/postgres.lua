@@ -35,6 +35,22 @@ return {
    ),
    [7] = i(7, "current_key")
  })),
+ s({trig="->>", trigEngine = "pattern", name="psql json text extract"}, fmt([[
+   ({1}{2} ->> '{3}') as {4},
+ ]], {
+  [1] = i(1, "tbl_alias"),
+  [2] = i(2, "column"),
+  [3] = i(3, "json_key"),
+  [4] = i(4, "value_alias")
+ })),
+ s({trig="->", trigEngine = "pattern", name="psql json extract"}, fmt([[
+   ({1}{2} -> '{3}') as {4},
+ ]], {
+  [1] = i(1, "tbl_alias"),
+  [2] = i(2, "column"),
+  [3] = i(3, "json_key"),
+  [4] = i(4, "value_alias")
+ })),
  s({trig="extract", name="psql extract"}, fmt([[
   extract({1} from {2}){3}
  ]], {
